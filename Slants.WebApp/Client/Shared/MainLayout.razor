@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+<nav class="p-3 bg-dark text-bg-dark sticky-top">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" class="d-block my-1" role="img"><title>Slants</title><path d="M10 23.375h13.125v-2.792H10Zm0-5.292h20v-2.791H10Zm0-5.291h20v-2.75H10ZM3.333 36.667V3.333h33.334V30H10Z" fill="currentColor" /></svg>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><NavLink href="/" class="nav-link px-2 text-white" ActiveClass="text-opacity-50" Match=@NavLinkMatch.All>Home</NavLink></li>
+                <li><NavLink href="/your-slants" class="nav-link px-2 text-white" ActiveClass="text-opacity-50" Match=@NavLinkMatch.All>Your Slants</NavLink></li>
+                <li><NavLink href="/slants-by-topic" class="nav-link px-2 text-white" ActiveClass="text-opacity-50" Match=@NavLinkMatch.All>By Topic</NavLink></li>
+                <li><NavLink href="/about" class="nav-link px-2 text-white" ActiveClass="text-opacity-50" Match=@NavLinkMatch.All>About</NavLink></li>
+            </ul>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-light me-2">Login</button>
+                <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<main>
+    <article class="content p-4">
+        @Body
+    </article>
+</main>
+

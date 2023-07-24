@@ -1,0 +1,12 @@
+﻿<ol class="list-group">
+    @foreach(var slant in _slants)
+    {
+        <li class="list-group-item">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@slant.Text</h5>
+                <small>@(DateTime.Now.Subtract(slant.Created).Days) days ago</small>
+            </div>
+            <small>Chris Spain</small>
+        </li>
+    }
+</ol>

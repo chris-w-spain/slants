@@ -9,7 +9,7 @@ using Slants.Services;
 
 namespace Slants.Core.Shared
 {
-    public partial class SlantsList
+    public partial class SlantsListByTopic
     {
         [Inject] private ISlantsService _slantService { get; set; } = default!;
         private readonly IList<Slant> _slants = new List<Slant>();

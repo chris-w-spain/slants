@@ -21,6 +21,9 @@ namespace Slants.Services
         public DateTime Created { get; set; }
 
         [ProtoMember(4)]
-        public List<string> Tags { get; set; } = new List<string>();
+        public List<string> Topics { get; set; } = new List<string>();
+
+        [ProtoMember(5)]
+        public Author? Author { get; set; }
     }
 }

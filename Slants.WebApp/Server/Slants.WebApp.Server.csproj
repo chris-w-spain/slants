@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Slants.Abstractions\Slants.Abstractions.csproj" />
     <ProjectReference Include="..\..\Slants.Services.Abstractions\Slants.Services.Abstractions.csproj" />
     <ProjectReference Include="..\Client\Slants.WebApp.Client.csproj" />
   </ItemGroup>

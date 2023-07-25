@@ -12,6 +12,7 @@ namespace Slants.Services
     public interface ISlantsService
     {
         Task<IEnumerable<Slant>> GetSlantsAsync();
+        Task<IEnumerable<Slant>> GetCurrentUserSlantsAsync();
         Task<IEnumerable<Slant>> GetFilteredSlantsAsync(GetFilteredSlantsRequest request, CallContext context = default);
     }
 }

@@ -1,0 +1,12 @@
+﻿@page "/mobilepage"
+@layout Slants.Core.Layouts.MobileAdaptiveLayout
+
+@if (CurrentLayout?.IsMobile == true)
+{
+    <p class="test__maincontent">mobile content</p>
+}
+else
+{
+    <p class="test__maincontent">desktop content</p>
+}
+

@@ -12,7 +12,7 @@ namespace Slants.Core.Shared
     public partial class SlantsList
     {
         [Inject] private ISlantsService _slantService { get; set; } = default!;
-        IList<Slant> _slants = new List<Slant>();
+        private readonly IList<Slant> _slants = new List<Slant>();
 
         protected async override Task OnInitializedAsync()
         {

@@ -5,7 +5,7 @@ namespace Slants.WebApp.Server.Services
 {
     public class SlantsService : ISlantsService
     {
-        private readonly List<Slant> _slants = new List<Slant>();
+        private readonly List<Slant> _slants = new();
 
         public SlantsService()
         {

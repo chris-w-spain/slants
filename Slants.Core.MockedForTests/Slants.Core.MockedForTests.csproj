@@ -16,7 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Slants.Services.Abstractions\Slants.Services.Abstractions.csproj" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Slants.Core\Slants.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,9 @@
-﻿<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="new[] { typeof(Slants.Core.Layouts.MobileAdaptiveLayout).Assembly }">
+﻿<Router AppAssembly="@typeof(Main).Assembly" AdditionalAssemblies="new[] { typeof(Slants.Core.Layouts.MobileAdaptiveLayout).Assembly }">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(Slants.Core.Layouts.MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(Slants.Core.Layouts.MainLayout)">
             <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>

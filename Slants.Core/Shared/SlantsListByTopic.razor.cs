@@ -14,16 +14,27 @@ namespace Slants.Core.Shared
         [Inject] private ISlantsService _slantService { get; set; } = default!;
         private readonly IList<Slant> _slants = new List<Slant>();
 
+        public async Task RefreshDataAsync()
+        {
+            await _getAndSetDataAsync();
+            this.StateHasChanged();
+        }
+
         protected async override Task OnInitializedAsync()
         {
+            await _getAndSetDataAsync();
+        }
+
+        private async Task _getAndSetDataAsync()
+        {
+            _slants.Clear();
+
             // getting all slants
             var slants = await _slantService.GetSlantsAsync();
-            foreach(var slant in slants)
+            foreach(var slant in slants.OrderByDescending(s => s.Created))
             {
                 _slants.Add(slant);
             }
-
-            this.StateHasChanged();
         }
     }
 }

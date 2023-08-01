@@ -11,10 +11,9 @@ namespace Slants.WebApp.Client.Configuration
         {
             builder.Services.AddSingleton(services =>
             {
-                //var navigationManager = services.GetRequiredService<NavigationManager>();
-                //var backendUrl = navigationManager.BaseUri;
                 var httpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler());
 
+                // TODO: Replace with your own remote address with config
                 return GrpcChannel.ForAddress("https://localhost:7138", new GrpcChannelOptions { HttpHandler = httpHandler });
             });
         }

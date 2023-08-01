@@ -14,5 +14,6 @@ namespace Slants.Services
         Task<IEnumerable<Slant>> GetSlantsAsync();
         Task<IEnumerable<Slant>> GetCurrentUserSlantsAsync();
         Task<IEnumerable<Slant>> GetFilteredSlantsAsync(GetFilteredSlantsRequest request, CallContext context = default);
+        Task<CreateSlantResponse> CreateSlantAsync(CreateSlantRequest request, CallContext context = default);
     }
 }

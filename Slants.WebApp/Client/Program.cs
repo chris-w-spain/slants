@@ -13,5 +13,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 // gRPC services
 builder.UseGrpcClient();
 builder.AddGrpcServiceClient<ISlantsService>();
+builder.AddGrpcServiceClient<ITopicsService>();
 
 await builder.Build().RunAsync();

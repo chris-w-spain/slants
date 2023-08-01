@@ -1,0 +1,33 @@
+﻿<div class="autocomplete form-floating">
+    <input type="text" @bind=@_inputValue class="form-control" id="topicTextInput" tabindex="1" placeholder="" @oninput=@OnInputChange>
+    <label for="topicTextInput" class="text-muted">Add topic here</label>
+    @if(_filteredTopics.Count > 0)
+    {
+        int i = 2;
+        <div class="dropdown-menu show">
+            <ul class="options">
+                @foreach (var topic in _filteredTopics)
+                {
+                    <li class="option dropdown-item" tabindex="@i++" @onkeypress=@(e => OnMenuItemKeyboardPress(e,topic)) @onclick=@(_ => SelectTopic(topic))>
+                        <span class="option-text">@topic</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    @if(SelectedTopics.Count > 0)
+    {
+        <div class="selected-topics mt-2">
+            @foreach (var topic in SelectedTopics)
+            {
+                <button type="button" class="selected-topic btn btn-light">
+                    @topic 
+                    <button class="btn-close btn-sm" aria-label="Remove" @onclick=@(_ => RemoveTopic(topic))></button>
+                </button>
+                <text>&nbsp;</text>
+            }
+        </div>
+    }
+    
+</div>
+

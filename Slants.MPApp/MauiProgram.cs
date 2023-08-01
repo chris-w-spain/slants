@@ -26,6 +26,7 @@ namespace Slants.MPApp
             // gRPC services
             builder.UseGrpcClient();
             builder.AddGrpcServiceClient<ISlantsService>();
+            builder.AddGrpcServiceClient<ITopicsService>();
 
             return builder.Build();
         }

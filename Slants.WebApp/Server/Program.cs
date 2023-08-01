@@ -41,5 +41,6 @@ app.MapFallbackToFile("index.html");
 
 app.UseGrpcWeb(new GrpcWebOptions { DefaultEnabled = true });
 app.MapGrpcService<SlantsService>();
+app.MapGrpcService<TopicsService>();
 
 app.Run();

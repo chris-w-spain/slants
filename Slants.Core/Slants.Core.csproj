@@ -20,4 +20,20 @@
     <ProjectReference Include="..\Slants.Services.Abstractions\Slants.Services.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\CreateSlantInlineForm.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Shared\CreateSlantInlineForm.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shared\CreateSlantInlineForm.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\SlantsByTopic\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,13 @@
 ﻿@page "/your-slants"
 <PageTitle>Your Slants</PageTitle>
 <h1>Your Slants</h1>
-<CurrentUserSlantsList></CurrentUserSlantsList>
+<CreateSlantInlineForm OnSlantCreated=@(async () => await SlantCreatedAsync())></CreateSlantInlineForm>
+<CurrentUserSlantsList @ref="_slantsList"></CurrentUserSlantsList>
+@code {
+    private CurrentUserSlantsList _slantsList = null!;
+
+    private async Task SlantCreatedAsync()
+    {
+        await _slantsList.RefreshDataAsync();
+    }
+}

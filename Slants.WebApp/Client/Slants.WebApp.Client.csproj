@@ -19,4 +19,8 @@
     <ProjectReference Include="..\..\Slants.Services.Abstractions\Slants.Services.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\js\bootstrap\" />
+  </ItemGroup>
+
 </Project>

@@ -1,12 +1,16 @@
-﻿<ol class="list-group">
-    @foreach(var slant in _slants)
-    {
-        <li class="list-group-item">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">@slant.Text</h5>
-                <small>@(DateTime.Now.Subtract(slant.Created).Days) days ago</small>
-            </div>
-            <small>@(slant.Author?.Name ?? "no author")</small>
-        </li>
-    }
-</ol>
+﻿@foreach (var topic in _slants.SelectMany(s => s.Topics).Distinct())
+{
+    <h4 class="mt-2">@topic</h4>
+    <ol class="list-group">
+        @foreach (var slant in _slants.Where(s => s.Topics.Contains(topic)))
+        {
+            <li class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">@slant.Text</h5>
+                    <small>@(DateTime.Now.Subtract(slant.Created).Days) days ago</small>
+                </div>
+                <small>@(slant.Author?.Name ?? "no author")</small>
+            </li>
+        }
+    </ol>
+}

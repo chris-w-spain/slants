@@ -1,0 +1,21 @@
+﻿<p class="d-inline-flex">
+    <button class="btn btn-dark" type="button" @onclick="@AddSlant">
+        Add a Slant
+    </button>
+</p>
+<p class="col-lg-6 col-md-10 gap-1 collapse @(Opened ? " show" : "")">
+    <div class="card card-body">
+        <div class="form-floating">
+            <input @bind=@_slantText type="text" class="form-control" id="slantTextInput" placeholder="">
+            <label for="slantTextInput" class="text-muted">Add your slant here</label>
+        </div>
+        <div class="mt-2">
+            <TopicsSelector @bind-SelectedTopics=@_topics></TopicsSelector>
+        </div>
+        <div>
+           <button class="btn btn-primary mt-2" type="button" @onclick="@(async () => await CreateSlantAsync())">Submit</button>
+        </div>
+    </div>
+</p>
+
+

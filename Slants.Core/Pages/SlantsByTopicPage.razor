@@ -1,0 +1,12 @@
+﻿@page "/slants-by-topic"
+<PageTitle>Slants By Topic</PageTitle>
+<h1>Slants By Topic</h1>
+<CreateSlantInlineForm OnSlantCreated=@(async () => await SlantCreatedAsync()) ></CreateSlantInlineForm>
+<SlantsListByTopic @ref="_slantsListByTopic"></SlantsListByTopic>
+@code {
+    private SlantsListByTopic _slantsListByTopic = null!;
+    private async Task SlantCreatedAsync()
+    {
+        await _slantsListByTopic.RefreshDataAsync();
+    }
+}
